@@ -1,2 +1,2 @@
-# ndb
-Name day finder
+# Name Day Finder
+
