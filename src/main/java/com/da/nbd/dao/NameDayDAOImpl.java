@@ -40,7 +40,6 @@ public class NameDayDAOImpl implements NameDayDAO {
             day = String.valueOf(actualDate.getDayOfMonth());
         }
         dateString = month + "." + day;
-        System.out.println(dateString);
         List<NameDay> nameDayList = new ArrayList<>();
         try (Connection conn = this.dataSource.getConnection()) {
             PreparedStatement prep = conn.prepareStatement("SELECT * FROM namedays WHERE date = ?");
@@ -57,5 +56,10 @@ public class NameDayDAOImpl implements NameDayDAO {
             e.printStackTrace();
         }
         return nameDayList;
+    }
+
+    @Override
+    public List<NameDay> getNameDayByDate(String date) {
+        return null;
     }
 }

@@ -7,6 +7,6 @@ import java.util.List;
 public interface NameDayDAO {
 
     List<NameDay> getActualNameDay();
-
+    List<NameDay> getNameDayByDate(String date);
 
 }
