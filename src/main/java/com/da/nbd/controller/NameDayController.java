@@ -13,12 +13,13 @@ import java.util.List;
 @RequestMapping(value = "/nameday")
 public class NameDayController {
 
+        @Autowired
         NameDayService nameDayService;
 
-        @Autowired
-        public NameDayController(NameDayService nameDayService) {
-            this.nameDayService = nameDayService;
-        }
+//        @Autowired
+//        public NameDayController(NameDayService nameDayService) {
+//            this.nameDayService = nameDayService;
+//        }
 
         @GetMapping
         public List<NameDay> getNameDays() {

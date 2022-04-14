@@ -12,7 +12,7 @@ import java.util.List;
 public class NameDayService {
 
     @Autowired
-    @Qualifier("jdbcNameDay")
+//    @Qualifier("jdbcNameDay")
     NameDayDAOImpl dataAccess;
 
     public List<NameDay> getActualNameDay() {

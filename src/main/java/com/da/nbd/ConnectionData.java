@@ -6,19 +6,26 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 @Configuration
 public class ConnectionData {
 
     @PostConstruct
-    public DataSource getDataSource() {
-        return DataSourceBuilder
-                .create()
-                .url(System.getenv("URL"))
-                .username(System.getenv("USERNAME"))
-                .password(System.getenv("PASSWORD"))
-                .build();
+    public Connection getDataSource() {
+        try {
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/namedays.db");
+        return conn;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
+
+
+
 
 }

@@ -13,13 +13,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("jdbcNameDay")
+@Component
 public class NameDayDAOImpl implements NameDayDAO {
 
-    DataSource dataSource;
+    Connection conn;
 
     public NameDayDAOImpl() {
-        this.dataSource = new ConnectionData().getDataSource();
+        this.conn = new ConnectionData().getDataSource();
     }
 
 
@@ -41,7 +41,8 @@ public class NameDayDAOImpl implements NameDayDAO {
         }
         dateString = month + "." + day;
         List<NameDay> nameDayList = new ArrayList<>();
-        try (Connection conn = this.dataSource.getConnection()) {
+        try  {
+            Connection conn = this.conn;
             PreparedStatement prep = conn.prepareStatement("SELECT * FROM namedays WHERE date = ?");
             prep.setString(1, dateString);
             ResultSet res = prep.executeQuery();
