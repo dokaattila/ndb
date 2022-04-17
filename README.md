@@ -1,5 +1,5 @@
 # Name Day Finder
-Name Day Finder (ndb) is a Java Spring application for retrieving hungarian namedays.
+Name Day Finder (ndb) is a Java Spring application, that returns hungarian name days.
 
 ## General Information
 - The project uses an SQLite database to store all the hungarian namedays, and is able to return the actual namedays
