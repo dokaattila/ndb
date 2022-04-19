@@ -6,6 +6,23 @@ Name Day Finder (ndb) is a Java Spring application, that returns hungarian name 
 via GET-requests.
 - The basic purpose of the project was to create a working Java Spring application.
 
+## Usage
+- APPLICATION_URL/nameday
+
+- The application takes a GET-request and returns a JSON object with current name days.
+https://name-day-finder.herokuapp.com/nameday
+
+- Example for a response:
+```json
+[
+    {
+        "id": 109,
+        "names": "Emma, Malvin, Zseraldina",
+        "monthDay": "04.19"
+    }
+]
+```
+
 ## Technologies Used
 - Java - version 17
 - Spring Boot - version 2.6.3
