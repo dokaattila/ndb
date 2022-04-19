@@ -1,12 +1,18 @@
 package com.da.nbd.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
 public class NameDay {
 
+    @Id
     private int id;
     private String names;
     private String monthDay;
