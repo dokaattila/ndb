@@ -16,10 +16,7 @@ public class NameDayController {
         @Autowired
         NameDayService nameDayService;
 
-//        @Autowired
-//        public NameDayController(NameDayService nameDayService) {
-//            this.nameDayService = nameDayService;
-//        }
+
 
         @GetMapping
         public List<NameDay> getNameDays() {
