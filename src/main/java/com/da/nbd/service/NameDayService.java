@@ -1,9 +1,9 @@
 package com.da.nbd.service;
 
-import com.da.nbd.dao.NameDayDAOImpl;
+import com.da.nbd.Util;
 import com.da.nbd.model.NameDay;
+import com.da.nbd.repository.NameDayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,11 +12,10 @@ import java.util.List;
 public class NameDayService {
 
     @Autowired
-//    @Qualifier("jdbcNameDay")
-    NameDayDAOImpl dataAccess;
+    NameDayRepository nameDayRepository;
 
     public List<NameDay> getActualNameDay() {
-        return this.dataAccess.getActualNameDay();
+        return this.nameDayRepository.findByMonthDay(Util.convertDate());
     }
 
 }
